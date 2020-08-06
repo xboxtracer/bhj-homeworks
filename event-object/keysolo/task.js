@@ -17,6 +17,7 @@ class Game {
   }
 
   registerEvents() {
+    console.log(this.currentSymbol.innerHTML)
     /*
       TODO:
       Написать обработчик события, который откликается
@@ -86,5 +87,11 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'))
+new Game(document.getElementById('game'));
 
+
+function insertKey(event) {
+  console.log(event.key == this.currentSymbol.innerHTML);
+};
+
+document.addEventListener('keydown', insertKey);
