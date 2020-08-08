@@ -25,6 +25,3 @@ function prevPic() {
     i--;
     myGallery[i].classList.toggle('slider__item_active');
 }
-// for(let i = 0; i < myGallery.length; i++) {
-//     console.log(myGallery[i].classList)
-// }
