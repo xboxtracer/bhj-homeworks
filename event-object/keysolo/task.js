@@ -17,14 +17,19 @@ class Game {
   }
 
   registerEvents() {
-    console.log(this.currentSymbol.innerHTML)
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
+    document.addEventListener('keyup', (event) => {
+      // console.log(event.key.charCodeAt(), String.fromCharCode(event.key.charCodeAt()).toLowerCase(), event.key)
+
+      let charCodeRule = (event.key.charCodeAt() > 96 && event.key.charCodeAt() < 123) || (event.key.charCodeAt() > 64 && event.key.charCodeAt() < 91);
+
+      if(charCodeRule) {
+        if (this.currentSymbol.innerHTML === event.key.toLowerCase()) {
+          this.success();
+        } else {
+          this.fail();
+        }
+      }
+    })
   }
 
   success() {
@@ -88,10 +93,3 @@ class Game {
 }
 
 new Game(document.getElementById('game'));
-
-
-function insertKey(event) {
-  console.log(event.key == this.currentSymbol.innerHTML);
-};
-
-document.addEventListener('keydown', insertKey);
