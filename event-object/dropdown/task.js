@@ -15,6 +15,7 @@ function changeText(e) {
 };
 
 btnDropdown.addEventListener('click', listToggle)
+
 for(let i = 0; i < dropdownLink.length; i++) {
     dropdownLink[i].addEventListener('click', changeText);
 };
