@@ -11,10 +11,10 @@ const robotMessage = [
     'К сожалению мы уже имеем достаточно заказов и вы нам не интересны!'
 ]
 
-chatWidgetOpen.parentElement.classList.add('chat-widget_active');
-// chatWidgetOpen.addEventListener('click', () => {
-//     chatWidgetOpen.parentElement.classList.add('chat-widget_active');
-// });
+// chatWidgetOpen.parentElement.classList.add('chat-widget_active');
+chatWidgetOpen.addEventListener('click', () => {
+    chatWidgetOpen.parentElement.classList.add('chat-widget_active');
+});
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
